@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .Container {
+            background-color: rgb(32, 32, 32);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            padding: 0 50px;
+        }
+        .lista{
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            margin-left: 65%;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            
+        }
+
+        .nav-list li {
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+        .nav-list li:hover{
+            color: #0077b5; 
+        }
+        .nav-list h1 {
+            color: white;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 75%;
+        }
+
+        .links a {
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            color: #0077b5; 
+        }
+        .body-port {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px; 
+        padding: 20px;
+        }
+
+        .body-port img {
+            width: 300px; 
+            margin: 0 20px;
+            object-fit: contain;
+        }
+
+        .conteudo {
+            color: rgb(8, 8, 8);
+            text-align: left;
+            max-width: 600px; 
+        }
+        .container-img{
+            margin-top: 400px;
+            display: flex;
+        }
+        .container-img img{
+            margin: 20px;
+        }
+    </style>
+<body>
+    <div class="Container">
+        <div class="nav-list">
+            <h1 >Leandro Candido</h1>
+            <ul class="lista">
+                <li>Sobre mim</li>
+                <li>Projetos</li>
+                <li>Contact Us</li>
+            </ul>
+            <div class="links">
+                <a href="https://instagram.com/seuuser" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://github.com/seuuser" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/seuuser" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>  
+            </div>
+        </div>
+        <div class="container-img">
+            <img src="" alt="FOTO">
+            <div class="container-text">
+                <h1>DEVELOPER</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus neque molestias eius hic voluptates necessitatibus, soluta accusantium, adipisci aspernatur doloribus! Eius provident tempora ducimus omnis, hic optio animi inventore!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente facere quasi vitae suscipit, eius ex soluta laborum laudantium aperiam illo dolores! Tempora consectetur ut esse aperiam sequi optio, modi velit.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae totam nemo tenetur, molestiae fugit vero quo ex ipsa doloribus, et provident quas consectetur reiciendis laborum similique. Alias dolorum iure quis?
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

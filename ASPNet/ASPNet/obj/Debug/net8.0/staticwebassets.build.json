@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "1gt5k00GAw9d46XWuf95b82RS+TrZW7E89aOEJtyfA4=",
+  "Source": "ASPNet",
+  "BasePath": "_content/ASPNet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ASPNet\\wwwroot",
+      "Source": "ASPNet",
+      "ContentRoot": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\wwwroot\\",
+      "BasePath": "_content/ASPNet",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\wwwroot\\index.html",
+      "SourceId": "ASPNet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\wwwroot\\",
+      "BasePath": "_content/ASPNet",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
