@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet.csproj": {}
+    "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\ASPNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet.csproj": {
+    "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\ASPNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet.csproj",
+        "projectUniqueName": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\ASPNet.csproj",
         "projectName": "ASPNet",
-        "projectPath": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet.csproj",
+        "projectPath": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\ASPNet.csproj",
         "packagesPath": "C:\\Users\\leandrocandido\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\obj\\",
+        "outputPath": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leandrocandido\\AppData\\Roaming\\NuGet\\NuGet.Config",
