@@ -22,7 +22,7 @@ namespace Exemplo3
             
             var connectionString = builder.Configuration.GetConnectionString("PostgresConnection");
 
-            builder.Services.AddDbContext<appDbContext>(options=>options.UseNpgsql(connectionString));
+            builder.Services.AddDbContext<AppDbContext>(options=>options.UseNpgsql(connectionString));
             //adiciona o serviço ao Banco de Dados
 
             builder.Services.AddControllers();//Adiciona serviço ao controller
