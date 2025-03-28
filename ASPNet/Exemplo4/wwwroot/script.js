@@ -18,12 +18,13 @@ function carregarUsuarios() {
             data.forEach(usuario => {
                 tbody.innerHTML += `
                     <tr>
+                        <td>${usuario.id}</td>
                         <td>${usuario.nome}</td>
-                        <td>${usuario.ramal}</td>
                         <td>${usuario.senha}</td>
+                        <td>${usuario.ramal}</td>
                         <td>${usuario.especialidade}</td>
                         <td>
-                            <button class="edit" onclick="editarUsuario(${usuario.id})"></button>
+                            <button class="edit" onclick="editarUsuario(${usuario.id})">Editar</button>
                             <button class="delete" onclick='deletarUsuario(${usuario.id})'>Deletar</button>
                         </td>
                     </tr>
@@ -37,7 +38,7 @@ function salvarUsuario(event) {
     event.preventDefault(); // previne o comportamento padrão do formulário (que é enviar os dados e recarregar a página)
     const id = document.getElementById("id").value; // pega o valor do campo id
     const usuario = {
-        id_usuario: parseInt(id || 0), // se id for vazio, atribui 0, e também converte para inteiro
+        id: parseInt(id || 0), // se id for vazio, atribui 0, e também converte para inteiro
         nome: document.getElementById("nome").value, // pega o valor do campo nome
         senha: document.getElementById("senha").value, // pega o valor do campo senha (corrigido para 'senha')
         ramal: document.getElementById("ramal").value, // pega o valor do campo ramal
@@ -70,14 +71,19 @@ function editarUsuario(id){
         .then(usuario => { // aqui ele vai preencher os campos do formulário com os dados do usuário
             document.getElementById("id").value = usuario.id; // preenche o campo id
             document.getElementById("nome").value = usuario.nome; // preenche o campo nome
-            document.getElementById("password").value = usuario.password; // preenche o campo password
+            document.getElementById("senha").value = usuario.password; // preenche o campo password
             document.getElementById("ramal").value = usuario.ramal; // preenche o campo ramal
             document.getElementById("especialidade").value = usuario.especialidade; // preenche o campo especialidade
         });
 }
+
 function deletarUsuario(id) {
-    // Aqui ele vai fazer a requisição DELETE para deletar o usuário
-    fetch(`${API}/${id}`, { method: "DELETE" }) // faz uma requisição DELETE para a API + id
-        .then(res => res.json()) // converte a resposta para JSON
-        .then(() => carregarUsuarios()); // chama a função para carregar a lista de usuários novamente
-}
+    if (confirm("Deseja realmente excluir este usuário?")) {
+      fetch(`${API}/${id}`, { method: "DELETE" })
+        .then(res => {
+          if (!res.ok) throw new Error("Erro ao deletar");
+          carregarUsuarios();
+        })
+        .catch(error => console.error("Erro:", error));
+    }
+  }

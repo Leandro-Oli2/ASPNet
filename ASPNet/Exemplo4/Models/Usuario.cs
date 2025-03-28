@@ -12,7 +12,7 @@ namespace Exemplo4.Models
         [Key]
         [Column("id_usuario")] 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdUsuario { get; set; } 
+        public int Id { get; set; }
 
         [Column("password")]
         public string Senha { get; set; } = string.Empty;
