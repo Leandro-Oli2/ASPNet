@@ -10,8 +10,9 @@ namespace Exemplo4.Models
     public class Usuario
     {
         [Key]
-        [Column("id_usuario")]
-        public int Id { get; set; }  
+        [Column("id_usuario")] 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdUsuario { get; set; } 
 
         [Column("password")]
         public string Senha { get; set; } = string.Empty;

@@ -15,4 +15,5 @@ namespace Exemplo4.Database
         public DbSet<Models.Maquina> Maquinas { get; set; }
 
     }
+    
 }

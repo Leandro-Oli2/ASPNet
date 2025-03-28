@@ -27,23 +27,27 @@ namespace Exemplo4
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+           var app = builder.Build();
 
-            // Habilita o Swagger no pipeline
-            app.UseSwagger();
-            app.UseSwaggerUI();
+        // Habilita o Swagger no pipeline
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
-            // Configura redirecionamento HTTPS
-            app.UseHttpsRedirection();
+        // Configura redirecionamento HTTPS
+        app.UseHttpsRedirection();
 
-            // Ativa a autorização
-            app.UseAuthorization();
+        // Ativa o uso de arquivos estáticos (para o index.html funcionar)
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
 
-            // Mapeia os controllers
-            app.MapControllers();
+        // Ativa a autorização
+        app.UseAuthorization();
 
-            // Roda a aplicação
-            app.Run();
+        // Mapeia os controllers
+        app.MapControllers();
+
+        // Roda a aplicação
+        app.Run();
         }
     }
 }
