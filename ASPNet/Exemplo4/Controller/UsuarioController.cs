@@ -25,7 +25,13 @@ namespace Exemplo4.Controller
             
             return await _context.Usuarios.ToListAsync();  
         }
-
+         [HttpGet("{id}")]
+        public async Task<ActionResult<Usuario>> Get(int id)
+        {
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null) return NotFound();
+            return usuario;
+        }
         [HttpPost] // Define que esse método é um POST
         public async Task<ActionResult<Usuario>> Post([FromBody] Usuario usuario) // Task é um método assíncrono, ActionResult é o tipo de retorno do método, [FromBody] indica que o usuário vai ser passado no corpo da requisição
         {

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Newtonsoft.Json;
 namespace Exemplo4.Models
 {
     [Table("maquina")]
@@ -9,7 +9,8 @@ namespace Exemplo4.Models
     {
         [Key]
         [Column("id_maquina")]
-        public int Id_maquina { get; set; }  // Renomeado para manter consistência
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id_maquina { get; set; } 
 
         [Column("tipo")]
         public string Tipo { get; set; } = string.Empty;
@@ -26,11 +27,8 @@ namespace Exemplo4.Models
         [Column("memoria_ram")]
         public int Memoria { get; set; }
 
+        [ForeignKey("Usuario")]
         [Column("fk_usuario")]
-        public int FkUsuario { get; set; }  
-
-
-        [ForeignKey("FkUsuario")] 
-        public virtual Usuario Usuario { get; set; }  
+        public int FkUsuario {get; set;}
     }
 }

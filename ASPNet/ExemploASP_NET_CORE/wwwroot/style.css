@@ -41,21 +41,4 @@ body {
     padding: 5px 10px;
     margin: 2px;
   }
-  .other-pages{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20%;
-  }
-  .other-pages a{
-     text-decoration: none;
-     background-color: rgb(255, 255, 255);
-     padding: 20px;
-     border-radius: 20px;
-     color: black;
-  }
-  .other-pages a:hover{
-    background-color: rgb(139, 139, 139);
-    color: white;
- }
+  

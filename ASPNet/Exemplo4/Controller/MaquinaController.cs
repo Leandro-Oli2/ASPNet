@@ -25,6 +25,14 @@ namespace Exemplo4.Controller
             
             return await _context.Maquinas.ToListAsync(); 
         }
+         [HttpGet("{id}")]
+        
+        public async Task<ActionResult<Maquina>> Get(int id)
+        {
+            var maquina = await _context.Maquinas.FindAsync(id);
+            if (maquina == null) return NotFound();
+            return maquina;
+        }
 
         [HttpPost] 
         public async Task<ActionResult<Maquina>> Post([FromBody] Maquina maquina) 

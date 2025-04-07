@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud das Maquinas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Maquina</h1>
+
+        <form id="maquinaform">
+            <input type="hidden" id="id">
+            <input type="text" id="tipo" placeholder="Tipo de Maquina" required>
+            <input type="number" id="velocidade" placeholder="Velocidade" required>
+            <input type="number" id="harddisk" placeholder="HardDisk" required>
+            <input type="number" id="placarede" placeholder="Placa de Rede" required>
+            <input type="number" id="memoriaram" placeholder="Memoria Ram" required>
+            <input type="number" id="fkusuario" placeholder="FkUser" required>
+            
+            <button type="submit">Salvar</button>
+        </form>
+
+        <h2>Lista de Maquina</h2>
+        <table id="tabelaMaquina">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo</th>
+                    <th>Velocidade</th>
+                    <th>HardDisk</th>
+                    <th>Memoria Ram</th>
+                </tr>
+            </thead>
+            <!-- tbody é preenchimento dinamimente com Js -->
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="other-pages">
+        <a href="index.html">Usuarios</a>
+        <a href="Maquina.html">Maquinas</a>
+        <a href="Software.html">Software</a>
+    </div>
+    <script src="script-mqn.js"></script>
+</body>
+
+</html>

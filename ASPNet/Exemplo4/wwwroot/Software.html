@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud dos Usuarios</title>
+    <title>Crud dos softwares</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Cadastro de Usuarios</h1>
+        <h1>Cadastro de Software</h1>
 
-        <form id="usuarioform">
+        <form id="softwareform">
             <input type="hidden" id="id">
-            <input type="text" id="nome" placeholder="Nome do Usuario" required>
-            <input type="password" id="senha" placeholder="Senha" required>
-            <input type="number" id="ramal" placeholder="Ramal" required>
-            <input type="text" id="especialidade" placeholder="Especialidade" required>
+            <input type="text" id="produto" placeholder="Produto" required>
+            <input type="number" id="harddisk" placeholder="HardDisk" required>
+            <input type="number" id="memoriaram" placeholder="Memoria Ram" required>
+            <input type="number" id="fkmaquina" placeholder="FkMaquina" required>
+            
             <button type="submit">Salvar</button>
         </form>
 
-        <h2>Lista de Usuarios</h2>
-        <table id="tabelaUsuarios">
+        <h2>Lista de Software</h2>
+        <table id="tabelaSoftware">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nome</th>
-                    <th>Senha</th>
-                    <th>Ramal</th>
-                    <th>Especialidade</th>
+                    <th>Produto</th>
+                    <th>HardDisk</th>
+                    <th>Memoria Ram</th>
                 </tr>
             </thead>
             <!-- tbody é preenchimento dinamimente com Js -->
@@ -38,10 +38,11 @@
         </table>
     </div>
     <div class="other-pages">
+        <a href="index.html">Usuarios</a>
         <a href="Maquina.html">Maquinas</a>
         <a href="Software.html">Software</a>
     </div>
-    <script src="script.js"></script>
+    <script src="script-sft.js"></script>
 </body>
 
 </html>
