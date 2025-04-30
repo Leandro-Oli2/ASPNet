@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AUbhZBxOp4Y=",
+  "dgSpecHash": "nfRZxZ3OVTg=",
   "success": true,
   "projectFilePath": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\ASPNet.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,11 @@
     "C:\\Users\\leandrocandido\\.nuget\\packages\\system.io.pipelines\\9.0.3\\system.io.pipelines.9.0.3.nupkg.sha512",
     "C:\\Users\\leandrocandido\\.nuget\\packages\\system.reflection.metadata\\8.0.1\\system.reflection.metadata.8.0.1.nupkg.sha512",
     "C:\\Users\\leandrocandido\\.nuget\\packages\\system.text.encodings.web\\9.0.3\\system.text.encodings.web.9.0.3.nupkg.sha512",
-    "C:\\Users\\leandrocandido\\.nuget\\packages\\system.text.json\\9.0.3\\system.text.json.9.0.3.nupkg.sha512"
+    "C:\\Users\\leandrocandido\\.nuget\\packages\\system.text.json\\9.0.3\\system.text.json.9.0.3.nupkg.sha512",
+    "C:\\Users\\leandrocandido\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.15\\microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
+    "C:\\Users\\leandrocandido\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.15\\microsoft.windowsdesktop.app.ref.8.0.15.nupkg.sha512",
+    "C:\\Users\\leandrocandido\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.15\\microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512",
+    "C:\\Users\\leandrocandido\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.15\\microsoft.netcore.app.host.win-x64.8.0.15.nupkg.sha512"
   ],
   "logs": []
 }

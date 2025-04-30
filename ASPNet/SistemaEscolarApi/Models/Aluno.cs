@@ -16,4 +16,5 @@ namespace SistemaEscolarApi.Models
         //ICollection é uma coleção que pode ser usada para armazenar uma lista de objetos relacionados
         //Assim é a coleção de disciplinas que o aluno está matriculado
         public ICollection <DisciplinaAlunoCurso> DisciplinaAlunoCurso { get; set; }
+    }
 }

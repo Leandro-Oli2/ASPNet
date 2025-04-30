@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASPNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c01f6b63ac9f962a5af96687f238e54feb19ae1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ea5dabffad7765f5e8a87cb2815242bf7b0c3f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASPNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASPNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

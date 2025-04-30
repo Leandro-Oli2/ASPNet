@@ -1,73 +1,19 @@
 {
   "Version": 1,
-  "Hash": "dSzeGTEG6OsBjYNRcYJNONJ1WQQKzhhZh3ocb1qULSY=",
-  "Source": "ASPNet",
-  "BasePath": "_content/ASPNet",
-  "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "ASPNet\\wwwroot",
-      "Source": "ASPNet",
-      "ContentRoot": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\",
-      "BasePath": "_content/ASPNet",
-      "Pattern": "**"
-    }
-  ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\home-img.png",
-      "SourceId": "ASPNet",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\",
-      "BasePath": "_content/ASPNet",
-      "RelativePath": "home-img#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "9bdssyp31o",
-      "Integrity": "mxnggbYuvv3qlEQqA8uwi2tyzFqKGNH3lJtjjQpUv+k=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\home-img.png"
-    },
-    {
-      "Identity": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\index.html",
-      "SourceId": "ASPNet",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\",
-      "BasePath": "_content/ASPNet",
-      "RelativePath": "index#[.{fingerprint}]?.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "fb578nxurp",
-      "Integrity": "q2rSW9WBbIBHFn3TZUPhOVbQTFMKhsL/eqVoGZMd2OY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
-    }
-  ],
   "Endpoints": [
     {
       "Route": "home-img.9bdssyp31o.png",
-      "AssetFile": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\home-img.png",
+      "AssetFile": "home-img.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -84,10 +30,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 21 Mar 2025 20:41:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -96,23 +38,27 @@
           "Value": "9bdssyp31o"
         },
         {
-          "Name": "label",
-          "Value": "home-img.png"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-mxnggbYuvv3qlEQqA8uwi2tyzFqKGNH3lJtjjQpUv+k="
+        },
+        {
+          "Name": "label",
+          "Value": "home-img.png"
         }
       ]
     },
     {
       "Route": "home-img.png",
-      "AssetFile": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\home-img.png",
+      "AssetFile": "home-img.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
         },
         {
           "Name": "Content-Length",
@@ -129,10 +75,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 21 Mar 2025 20:41:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
         }
       ],
       "EndpointProperties": [
@@ -144,12 +86,16 @@
     },
     {
       "Route": "index.fb578nxurp.html",
-      "AssetFile": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\index.html",
+      "AssetFile": "index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -166,10 +112,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 21 Mar 2025 20:58:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -178,23 +120,27 @@
           "Value": "fb578nxurp"
         },
         {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-q2rSW9WBbIBHFn3TZUPhOVbQTFMKhsL/eqVoGZMd2OY="
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
         }
       ]
     },
     {
       "Route": "index.html",
-      "AssetFile": "C:\\Users\\leandrocandido\\Desktop\\ASPNet\\ASPNet\\ASPNet\\wwwroot\\index.html",
+      "AssetFile": "index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -211,10 +157,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 21 Mar 2025 20:58:15 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
