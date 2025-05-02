@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SistemaEscolarApi.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class CursoController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -27,6 +29,7 @@ namespace SistemaEscolarApi.Controllers
             var cursos = await _context.Cursos
                 .Select(cursos => new CursoDTO
                 {
+                    Id = cursos.Id,
                     Descricao = cursos.Descricao
                 })
                 .ToListAsync();
@@ -65,8 +68,22 @@ namespace SistemaEscolarApi.Controllers
             _context.Cursos.Remove(curso);
             await _context.SaveChangesAsync();
             
-            return Ok();
+            return NoContent();
 
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CursoDTO>> GetById(int id)
+        {
+            var curso = await _context.Cursos.FindAsync(id);
+            if (curso == null) return NotFound("Curso não encontrado.");
+
+            var cursoDto = new CursoDTO
+            {
+                Id = curso.Id,
+                Descricao = curso.Descricao
+            };
+
+            return Ok(cursoDto);
         }
     }
 }

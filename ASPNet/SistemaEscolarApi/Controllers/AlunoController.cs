@@ -27,6 +27,7 @@ namespace SistemaEscolarApi.Controllers
             .Include(a => a.Curso)
             .Select(a => new AlunoDTO
             {
+                Id = a.Id,
                 Nome = a.Nome,
                 Curso = a.Curso.Descricao
             })
@@ -48,7 +49,7 @@ namespace SistemaEscolarApi.Controllers
             _context.Alunos.Add(aluno);
             await _context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(new {mensagem = "Aluno cadastrado com sucesso!"});
         }
 
         [HttpPut("{id}")]
@@ -65,7 +66,7 @@ namespace SistemaEscolarApi.Controllers
             _context.Alunos.Update(aluno);
             await _context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(new {mensagem = "Aluno atualizado com sucesso!"});
         }
 
         [HttpDelete("{id}")]
@@ -76,7 +77,24 @@ namespace SistemaEscolarApi.Controllers
             _context.Alunos.Remove(aluno);
             await _context.SaveChangesAsync();
             
-            return Ok();
+            return Ok(new {mensagem = "Aluno removido com sucesso!"});
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AlunoDTO>> GetById(int id){
+            var aluno = await _context.Alunos
+            .Include(a => a.Curso)
+            .FirstOrDefaultAsync(a => a.Id == id);
+
+            if (aluno == null) return NotFound("Aluno não encontrado.");
+
+            var alunoDto = new AlunoDTO
+            {
+                Id = aluno.Id,
+                Nome = aluno.Nome,
+                Curso = aluno.Curso.Descricao
+            };
+
+            return Ok(alunoDto);
         }
     }
 }

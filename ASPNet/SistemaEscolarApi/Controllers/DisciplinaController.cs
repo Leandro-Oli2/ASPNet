@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SistemaEscolarApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class DisciplinaController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -28,6 +28,7 @@ namespace SistemaEscolarApi.Controllers
                 .Include(d => d.Curso)
                 .Select(d => new DisciplinaDTO
                 {
+                    Id = d.Id,
                     Descricao = d.Descricao,
                     Curso = d.Curso.Descricao
                 })
@@ -51,7 +52,7 @@ namespace SistemaEscolarApi.Controllers
             _context.Disciplinas.Add(disciplina);
             await _context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(new { mensagem = "Disciplina cadastrada com sucesso!" });
         }
 
         [HttpPut("{id}")]
@@ -69,7 +70,7 @@ namespace SistemaEscolarApi.Controllers
             _context.Disciplinas.Update(disciplina);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(new {mensagem = "Disciplina atualizada com sucesso!" });
         }
 
         [HttpDelete("{id}")]
@@ -81,7 +82,25 @@ namespace SistemaEscolarApi.Controllers
             _context.Disciplinas.Remove(disciplina);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(new {mensagem = "Disciplina removida com sucesso!" });
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DisciplinaDTO>> GetById(int id)
+        {
+            var disciplina = await _context.Disciplinas
+            .Where(d => d.Id == id)
+            .Select(d => new DisciplinaDTO
+            {
+                Id = d.Id,
+                Descricao = d.Descricao,
+                Curso = d.Curso.Descricao
+            })
+            .FirstOrDefaultAsync();
+
+            if (disciplina == null) return NotFound("Disciplina não encontrada.");
+
+            return Ok(disciplina);
         }
     }
 }
