@@ -9,30 +9,86 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero-section{
-            background-color: linear-gradient(rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1200x600/?school,university');
-            background-color: cover;
+        /* é parte que fica em cima da pagina com a imagem de fundo e o texto  */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://th.bing.com/th/id/OIP.MNlRBpo-SjTWpiAiv3ZPgwHaE8?cb=iwc1&rs=1&pid=ImgDetMain');
+            background-size: cover;
             background-position: center;
             padding: 100px 0;
             margin-bottom: 50px;
-            color: rgb(204, 34, 34);
+            color: white;
             text-align: center;
         }
-        .navbar{
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
 
         }
-        .navbar-brand{
-            font-size: 1.5rem;
-            font-weight: bold;
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
         }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .modal-header,
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
     </style>
+
 </head>
+
 <body>
+    <!-- fas é estilo solido; fa-graduation é icone estilo capelo; me-2 é magem direita -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
+            <!-- tag a é para ligar hiper ligacações -->
             <a class="navbar-brand" href="#">
+                <!-- tag i ara deixar o string em italico -->
                 <i class="fas fa-graduation-cap me-2">Escola Oliveira LTDA</i>
             </a>
             <button class="navbar-toggler" type="button" data-bs-taggle="collapse" data-bs-target="#navbarNav">
@@ -47,7 +103,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="login.html" class="nav-link">
-                            <i class="fas fa-sign-in-alt me-1"> Login</i>
+                            <i class="fas fa-sign-in-alt me-2">login</i>
                         </a>
                     </li>
                 </ul>
@@ -55,87 +111,97 @@
         </div>
     </nav>
 
-    <!-- colocar o header -->
-     <header class="hero-section">
+    <!-- colocar header para já entrar no titulo e listar as funcionalidas -->
+    <header class="hero-section">
         <div class="container">
+            <!-- display-4 uma classe do bootstrap para deixar o texto maior e mais detectado -->
+            <!-- fwobold é outra classe bt. que deixa o texto mais grosso -->
             <h1 class="display-4 fw-bold">Bem vindo ao Cursos Oliveira</h1>
             <p class="lead"> Sistemas de gestão Educacional</p>
         </div>
-     </header>
+    </header>
 
-     <section class="container py-5">
+    <section class="container py-5">
         <h2 class="text-center mb-5">Nossos Módulos</h2>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100">
-              <img src="https://th.bing.com/th/id/OIP.AUQk6KkAAgvZ45F7b-2hrAHaEj?w=263&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" class="card-img-top" alt="Alunos">
-              <div class="card-body text-center">
-                <h5 class="card-title">Gestão de Alunos</h5>
-                <p class="card-text">Gerencie os alunos da instituição</p>
-                <a href="alunos.html" class="btn btn-primary">Acessar</a>
-              </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="https://th.bing.com/th/id/OIP.AUQk6KkAAgvZ45F7b-2hrAHaEj?w=263&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                        class="card-img-top" alt="Alunos">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gestão de Alunos</h5>
+                        <p class="card-text">Cadastre e gerencie os alunos da instituição</p>
+                        <a href="alunos.html" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
             </div>
-          </div>
-    
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100">
-              <img src="https://th.bing.com/th/id/OIP.Ag1PBOm-9oLRRtWLQY9DogHaD4?w=273&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" class="card-img-top" alt="Cursos">
-              <div class="card-body text-center">
-                <h5 class="card-title">Gestão de Cursos</h5>
-                <p class="card-text">Administre os cursos oferecidos</p>
-                <a href="cursos.html" class="btn btn-primary">Acessar</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100">
-                <img src="https://th.bing.com/th/id/OIP.NtDnTRrFLF0ndu2fGFqjiAHaEc?w=270&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" class="card-img-top" alt="Disciplinas">
-              <div class="card-body text-center">
-                <h5 class="card-title">Gestão de Disciplinas</h5>
-                <p class="card-text">Administre as disciplinas oferecidos</p>
-                <a href="disciplinas.html" class="btn btn-primary">Acessar</a>
-              </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="https://th.bing.com/th/id/OIP.Ag1PBOm-9oLRRtWLQY9DogHaD4?w=273&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                        class="card-img-top" alt="Cursos">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gestão de Cursos</h5>
+                        <p class="card-text">Administre os cursos oferecidos</p>
+                        <a href="cursos.html" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100">
-                <img src="https://th.bing.com/th/id/OIP.cPJYmtaWRzQ_0zaGeGId1QHaE8?w=263&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" class="card-img-top" alt="Relacionamentos">
-              <div class="card-body text-center">
-                <h5 class="card-title">Relações Academicas</h5>
-                <p class="card-text">Gerencie as relações entre as entidades</p>
-                <a href="disciplinasAlunoCurso.html" class="btn btn-primary">Acessar</a>
-              </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="https://th.bing.com/th/id/OIP.NtDnTRrFLF0ndu2fGFqjiAHaEc?w=270&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                        class="card-img-top" alt="Disciplinas">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gestão de Disciplinas</h5>
+                        <p class="card-text">Controle as Disciplinas dos Cursos</p>
+                        <a href="disciplinas.html" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="https://th.bing.com/th/id/OIP.cPJYmtaWRzQ_0zaGeGId1QHaE8?w=263&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                        class="card-img-top" alt="Relacionamentos">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Relações Academicas</h5>
+                        <p class="card-text">Gereicie as relações entre as entidades</p>
+                        <a href="discipliina-aluno-curso.html" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
     </section>
 
+    <!--  -->
     <section class="bg-light py-5">
         <div class="container">
             <div class="row align-itens-center">
                 <div class="col-lg-6">
-                    <h2>Sistema Completo de gestão Educacional</h2>
-                    <p class="lead">O Sistema Educacional Oliveira é uma plataforma completa para gerenciar instituições de ensino, oferecendo funcionalidades para administração de alunos, cursos, disciplinas e muito mais.</p>
-                    <ul class="list-unstylead">
+                    <h2>Sistemas Completo de gestão Educacional</h2>
+                    <p class="lead">Oferecemos todas as ferramentas nescessarias para administração eficiente de sua
+                        instituição de ensino</p>
+                    <ul class="list-unstyled">
                         <li style="list-style-type: none;">
-                            <i class="fas fa-star text-warning me-2"></i>Interface intuitiva e facil de usar
+                            <i class="fas fa-star text-warning me-2"></i> Interface intuitiva e fácil de usar
                         </li>
                         <li style="list-style-type: none;">
-                            <i class="fas fa-star text-warning me-2"></i>Relatorios completos e personalizavel
+                            <i class="fas fa-star text-warning me-2"></i> Relatorios completos e personalizavel
                         </li>
                         <li style="list-style-type: none;">
-                            <i class="fas fa-star text-warning me-2"></i>Acesso seguro com multiplos
+                            <i class="fas fa-star text-warning me-2"></i> Acesso seguro com multiplos perfis
                         </li>
                         <li style="list-style-type: none;">
-                            <i class="fas fa-star text-warning me-2"></i>Integração entre todos os modulos
+                            <i class="fas fa-star text-warning me-2"></i> Integração entre todos os modulos
                         </li>
                     </ul>
                     <button id="saiba-mais" class="btn btn-primary mt-3">Saiba Mais</button>
                 </div>
+
             </div>
             <div class="col-lg-6">
-                <img src="https://th.bing.com/th/id/OIP.rQT9VzrO-W44MHe1Pix1rgHaFo?w=212&h=180&c=7&pcl=292827&r=0&o=5&cb=iwc1&dpr=1.1&pid=1.7" alt="Sistema Educacional" class="img-fluid rounded shadow">
+                <img src="https://th.bing.com/th/id/OIP.rQT9VzrO-W44MHe1Pix1rgHaFo?w=212&h=180&c=7&pcl=292827&r=0&o=5&cb=iwc1&dpr=1.1&pid=1.7"
+                    alt="Sistema Educacional" class="img-fluid rounded shadow">
             </div>
         </div>
     </section>
@@ -143,33 +209,56 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
+                <div class="col-md-6">
                     <h5>Sistema Oliveira</h5>
                     <p>O sistema de gestão Educacional mais completo do mercado</p>
-            
-                <div class="col-md-6">
+                </div>
+
+                <div class="col-md-3">
                     <h5>Links Rapidos</h5>
-                    <ul class="list-unstylead">
-                        <li> 
+                    <ul class="list-unstyled">
+                        <li>
                             <a href="login.html" class="text-white">Login</a>
                             <a href="alunos.html" class="text-white">Alunos</a>
                             <a href="cursos.html" class="text-white">Cursos</a>
                         </li>
                     </ul>
                 </div>
-
                 <div class="col-md-3">
-                    <h5>Contatos</h5>
-                    <ul class="list-unstylead">
-                        <li> 
-                            <i class="fas fa-envelope"></i> contato@Gmail.com
+                    <h5>Contato</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>contado@contado.com
                         </li>
-                        <li> 
-                            <i class="fas fa-envelope"></i> (11) 1234-56789
+                        <li>
+                            <i class="fas fa-phone me-2"></i>(11)1234-56789
                         </li>
                     </ul>
+                </div>
+                <div class="text-center">
+                    <p class="mb-0"> 2025. Todos os direitos reservados</p>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         
+         document.getElementById('saiba-mais').addEventListener('click', function () {
+            Modal.show('Sobre o Sistema de educação', `
+                    <p>Sistemas de educação</p>
+                    <p><strong>Principais recursos:</strong></p>
+                    <ul>
+                    <li>Gestão completa de alunos, cursos e disciplinas</li>
+                    <li>Controle de matrículas e frequência</li>
+                    <li>Relatórios personalizados</li>
+                    <li>Acesso multiperfil</li>
+                    <li>Interface responsiva</li>
+                    </ul>
+                `, []);
+        })
+    </script>
 </body>
+
 </html>
