@@ -1,30 +1,30 @@
-const apiUrl = "/api/Disciplina"; // ou http://localhost:5190/api/Aluno
+const apiUrl = "/api/Disciplina"; // ou http://localhost:5190/api/Disciplina
 
 let editandoId = null;
 
-const form = document.getElementById('aluno-form');
-const nomeInput = document.getElementById('nome');
+const form = document.getElementById('disciplina-form');
+const descricaoInput = document.getElementById('descricao');
 const cursoInput = document.getElementById('curso');
 const statusMsg = document.getElementById('status-msg');
-const listaAlunos = document.getElementById('lista-alunos');
+const listaDisciplinas = document.getElementById('lista-disciplinas');
 
-function carregarAlunos() {
+function carregarDisciplinas() {
   fetch(apiUrl)
     .then(res => res.json())
-    .then(alunos => {
-      listaAlunos.innerHTML = '';
-      alunos.forEach(aluno => {
+    .then(disciplinas => {
+      listaDisciplinas.innerHTML = '';
+      disciplinas.forEach(disciplina => {
         const div = document.createElement('div');
-        div.className = 'aluno-item';
+        div.className = 'disciplina-item';
         div.innerHTML = `
-          <span><strong>Nome:</strong> ${aluno.nome}</span>
-          <span><strong>Curso:</strong> ${aluno.curso}</span>
+          <span><strong>Descrição:</strong> ${disciplina.descricao}</span>
+          <span><strong>Curso:</strong> ${disciplina.curso}</span>
           <div class="actions">
-            <button onclick="editarAluno(${aluno.id})">Editar</button>
-            <button class="delete" onclick="excluirAluno(${aluno.id})">Excluir</button>
+            <button onclick="editarDisciplina(${disciplina.id})">Editar</button>
+            <button class="delete" onclick="excluirDisciplina(${disciplina.id})">Excluir</button>
           </div>
         `;
-        listaAlunos.appendChild(div);
+        listaDisciplinas.appendChild(div);
       });
     });
 }
@@ -32,8 +32,8 @@ function carregarAlunos() {
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const aluno = {
-    nome: nomeInput.value,
+  const disciplina = {
+    descricao: descricaoInput.value,
     curso: cursoInput.value
   };
 
@@ -43,48 +43,48 @@ form.addEventListener('submit', function(e) {
   fetch(url, {
     method: metodo,
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(aluno)
+    body: JSON.stringify(disciplina)
   })
   .then(res => {
     if (!res.ok) throw new Error('Erro ao salvar');
     return res.json();
   })
   .then(() => {
-    statusMsg.textContent = editandoId ? 'Aluno atualizado com sucesso!' : 'Aluno cadastrado com sucesso!';
+    statusMsg.textContent = editandoId ? 'Disciplina atualizada com sucesso!' : 'Disciplina cadastrada com sucesso!';
     statusMsg.style.color = 'green';
     form.reset();
     editandoId = null;
-    carregarAlunos();
+    carregarDisciplinas();
   })
   .catch(() => {
-    statusMsg.textContent = 'Erro ao salvar aluno.';
+    statusMsg.textContent = 'Erro ao salvar disciplina.';
     statusMsg.style.color = 'red';
   });
 });
 
-function editarAluno(id) {
+function editarDisciplina(id) {
   fetch(`${apiUrl}/${id}`)
     .then(res => res.json())
-    .then(aluno => {
-      nomeInput.value = aluno.nome;
-      cursoInput.value = aluno.curso;
-      editandoId = aluno.id;
-      statusMsg.textContent = 'Editando aluno...';
+    .then(disciplina => {
+      descricaoInput.value = disciplina.descricao;
+      cursoInput.value = disciplina.curso;
+      editandoId = disciplina.id;
+      statusMsg.textContent = 'Editando disciplina...';
       statusMsg.style.color = 'blue';
     });
 }
 
-function excluirAluno(id) {
-  if (!confirm('Deseja realmente excluir este aluno?')) return;
+function excluirDisciplina(id) {
+  if (!confirm('Deseja realmente excluir esta disciplina?')) return;
 
   fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
     .then(res => {
       if (!res.ok) throw new Error('Erro ao excluir');
-      carregarAlunos();
+      carregarDisciplinas();
     })
     .catch(() => {
-      alert('Erro ao excluir aluno.');
+      alert('Erro ao excluir disciplina.');
     });
 }
 
-carregarAlunos();
+carregarDisciplinas();
